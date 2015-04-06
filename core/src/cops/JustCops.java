@@ -34,4 +34,8 @@ public class JustCops extends ApplicationAdapter {
 		batch.draw(img, deplacement(), 0);
 		batch.end();
 	}
+	//Arrêt
+	public void dispose(){
+		img.dispose();
+	}
 }
