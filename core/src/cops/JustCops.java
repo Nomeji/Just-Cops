@@ -1,5 +1,7 @@
 package cops;
 
+import java.io.FileNotFoundException;
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -11,21 +13,27 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public class JustCops extends ApplicationAdapter {
 	//Taille de la fenetre
-	public static final int LARGEUR=450;
-	public static final int HAUTEUR=820;
+	public static final int LARGEUR=640;
+	public static final int HAUTEUR=480;
 	//Joueur
 	public static final int JOUEURMAX=2;
 	
 	//Attribut de la partie
 	private SpriteBatch batch;
 	private Personnage perso;
+	private Map map;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		//Creation des personnages
 		if(Personnage.nbJoueurs<=JOUEURMAX){
-			perso=new Personnage(new Vector2(0,0));
+			perso=new Personnage(new Vector2(3,3));
+		}
+		try {
+			map=new Map("level1.txt");
+		} catch (FileNotFoundException e) {
+			System.out.println("Erreur, la map n'existe pas");
 		}
 	}
 	@Override
@@ -37,9 +45,12 @@ public class JustCops extends ApplicationAdapter {
 		perso.updateEvenement();
 		//Deplacement et action
 		perso.update();
+		//Gestion de la collision avec la map
+		map.collision(perso);
 		//Deplacement du personnage
 		perso.deplacement();
 		batch.begin();
+		map.draw(batch);
 		perso.draw(batch);
 		batch.end();
 	}

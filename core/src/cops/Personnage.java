@@ -149,4 +149,21 @@ public class Personnage {
 		mouvement.x=0;
 		mouvement.y=0;
 	}
+	//Getteur de position
+	public Vector2 getLocalisation(){
+		return(localisation);
+	}
+	//Getteur de mouvement
+	public Vector2 getMouvement(){
+		return(mouvement);
+	}
+	//Getteur de taille
+	public Vector2 getTaille(){
+		return(taille);
+	}
+	//Setteur de mouvement
+	public void setMouvement(Vector2 move){
+		mouvement.x=move.x;
+		mouvement.y=move.y;
+	}
 }
