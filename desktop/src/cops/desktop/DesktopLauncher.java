@@ -12,6 +12,9 @@ public class DesktopLauncher {
 		
 		config.width=JustCops.LARGEUR;
 		config.height=JustCops.HAUTEUR;
+		//Gestion des fps
+		config.foregroundFPS= 100;
+		config.backgroundFPS= 100;
 		
 		new LwjglApplication(new JustCops(),config);
 	}
