@@ -74,7 +74,7 @@ public class Map {
 				Vector2 localisationTile=new Vector2(tiles.get(cptTile).getLocalisation());
 				//Test des différente collision
 				//En abscisse
-				if((localisationTile.x<localisationPerso.x+taillePerso.x && localisationTile.x>localisationPerso.x)||(localisationTile.x+TTILE<localisationPerso.x+taillePerso.x && localisationTile.x+TTILE>localisationPerso.x)){
+				if((localisationTile.x+5*TTILE-1<localisationPerso.x+taillePerso.x  && localisationTile.x+TTILE >localisationPerso.x)){
 					//En ordonné
 					if((localisationTile.y<localisationPerso.y+taillePerso.y && localisationTile.y>localisationPerso.y)||(localisationTile.y+TTILE<localisationPerso.y+taillePerso.y && localisationTile.y+TTILE>localisationPerso.y)){
 						if(tiles.get(cptTile).getNum()==0){
@@ -86,5 +86,4 @@ public class Map {
 			}
 		}
 	}
-	
 }
