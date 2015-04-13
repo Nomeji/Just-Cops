@@ -29,14 +29,14 @@ public class JustCops extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		//Creation des personnages
 		if(Personnage.nbJoueurs<=JOUEURMAX){
-			perso=new Personnage(new Vector2(3,3));
+			perso=new Personnage(new Vector2(19,3));
 		}
 		try {
 			map=new Map("level1.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur, la map n'existe pas");
 		}
-		ascenseur=new Ascenseur(new Vector2(3,3),1);
+		ascenseur=new Ascenseur(new Vector2(3,2),1);
 		
 	}
 	@Override
@@ -53,7 +53,7 @@ public class JustCops extends ApplicationAdapter {
 		//Deplacement du personnage
 		perso.deplacement();
 		//Les ascenseur bouge
-		ascenseur.monter();
+		ascenseur.monter(perso);
 		//Affichage
 		batch.begin();
 		map.draw(batch);

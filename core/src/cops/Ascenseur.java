@@ -28,16 +28,18 @@ public class Ascenseur {
 		this.nbEtages=nbEtages;
 	}
 	//L'ascenseur monte
-	public void monter(){
-		if(cptEtages<nbEtages*TAILLETAGE){
+	public void monter(Personnage perso){
+		//L'ascenseur monte
+		if(cptEtages<=nbEtages*TAILLETAGE){
 			if(monte){
 				localisation.y++;
 				cptEtages++;
-				if(cptEtages==nbEtages*TAILLETAGE-1){
+				if(cptEtages==nbEtages*TAILLETAGE){
 					monte=false;
 				}
 			}
 		}
+		//L'ascenseur descend
 		if(cptEtages>=0){
 			if(!monte){
 				localisation.y--;
@@ -47,13 +49,20 @@ public class Ascenseur {
 				}
 			}
 		}
-	}
-	//L'ascenseur descend
-	public void descendre(){
-		if(cptEtages!=0){
-			localisation.y--;
+		//On vérifie l'abscisse dans le cas où il monte
+		if((perso.getLocalisation().x>=localisation.x && perso.getLocalisation().x<=localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& monte){
+			//Puis l'ordonné
+			if(perso.getLocalisation().y>=localisation.y && perso.getLocalisation().y<=localisation.y+1){
+				perso.getLocalisation().y++;
+			}
 		}
-		else monter();
+		//On vérifie l'abscisse dans la cas où l'ascenseur descend
+		if((perso.getLocalisation().x>localisation.x && perso.getLocalisation().x<localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& !monte){
+			//Puis l'ordonné
+			if(perso.getLocalisation().y>=localisation.y && perso.getLocalisation().y<=localisation.y+2){
+				perso.getLocalisation().y--;
+			}
+		}
 	}
 	//Méthode pour affichage du personnage
 	public void draw(SpriteBatch batch){
