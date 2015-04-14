@@ -22,10 +22,11 @@ public class JustCops extends ApplicationAdapter {
 	private SpriteBatch batch;
 	private Personnage perso;
 	private Map map;
+	private Camera cam;
 	
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
+		batch = new SpriteBatch();		
 		//Creation des personnages
 		if(Personnage.nbJoueurs<=JOUEURMAX){
 			perso=new Personnage(new Vector2(3,3));
@@ -35,16 +36,22 @@ public class JustCops extends ApplicationAdapter {
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur, la map n'existe pas");
 		}
+		// Création de la caméra
+		cam = new Camera(perso);
+		cam.update();
 	}
 	@Override
 	public void render () {
 		//La fenetre
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		//Mise � jour des evenements
+		//Mise � jour des evenements
 		perso.updateEvenement();
 		//Deplacement et action
 		perso.update();
+		// Camera
+		cam.update();
+		batch.setProjectionMatrix(cam.getCamera().combined);
 		//Gestion de la collision avec la map
 		map.collision(perso);
 		//Deplacement du personnage
