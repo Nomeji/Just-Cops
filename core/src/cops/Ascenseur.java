@@ -30,7 +30,7 @@ public class Ascenseur {
 	//L'ascenseur monte
 	public void monter(Personnage perso){
 		//L'ascenseur monte
-		if(cptEtages<=nbEtages*TAILLETAGE){
+		if(cptEtages<=nbEtages*TAILLETAGE+1){
 			if(monte){
 				localisation.y++;
 				cptEtages++;

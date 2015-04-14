@@ -21,7 +21,6 @@ public class JustCops extends ApplicationAdapter {
 	//Attribut de la partie
 	private SpriteBatch batch;
 	private Personnage perso;
-	private Ascenseur ascenseur;
 	private Map map;
 	
 	@Override
@@ -29,15 +28,13 @@ public class JustCops extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		//Creation des personnages
 		if(Personnage.nbJoueurs<=JOUEURMAX){
-			perso=new Personnage(new Vector2(19,3));
+			perso=new Personnage(new Vector2(19,HAUTEUR-132));
 		}
 		try {
 			map=new Map("level1.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur, la map n'existe pas");
 		}
-		ascenseur=new Ascenseur(new Vector2(3,2),1);
-		
 	}
 	@Override
 	public void render () {
@@ -53,11 +50,10 @@ public class JustCops extends ApplicationAdapter {
 		//Deplacement du personnage
 		perso.deplacement();
 		//Les ascenseur bouge
-		ascenseur.monter(perso);
+		map.monter(perso);
 		//Affichage
 		batch.begin();
 		map.draw(batch);
-		ascenseur.draw(batch);
 		perso.draw(batch);
 		batch.end();
 	}
