@@ -26,6 +26,11 @@ public class Map {
 	//Liste d'ascenseur
 	private ArrayList<Ascenseur> ascenseurs;
 	private int nbAscenseur;
+	//Liste des portes et gestion des objectifs
+	private ArrayList<Porte> portes;
+	private int nbPortes;
+	private int nbObjectifs;
+	private int nbBonus;
 	//Tile pouvant être traverser
 	private int numTile;
 	
@@ -33,6 +38,7 @@ public class Map {
 		taille=new Vector2();
 		tiles=new ArrayList<Tile>();
 		ascenseurs=new ArrayList<Ascenseur>();
+		portes=new ArrayList<Porte>();
 		//Scanner de fichier
 		Scanner fichier;
 		//Fichier tile du niveau
@@ -61,12 +67,37 @@ public class Map {
 		int abscisseA;
 		int ordonneA;
 		int nbEtagesA;
+		//Boucle pour entrer les ascenseurs en fonction du fichier
 		for(int i=0;i<nbAscenseur;i++){
 			abscisseA=fichier.nextInt();
 			ordonneA=fichier.nextInt();
 			nbEtagesA=fichier.nextInt();
 			ascenseurs.add(new Ascenseur(new Vector2(abscisseA,ordonneA),nbEtagesA));
 		}
+		//gestion des porte;
+		nbPortes=fichier.nextInt();
+		nbObjectifs=fichier.nextInt();
+		nbBonus=fichier.nextInt();
+		int abscisseP;
+		int ordonneP;
+		int typeP;
+		//Boucle pour entrer les portes
+		for(int i=0;i<nbPortes;i++){
+			abscisseP=fichier.nextInt();
+			ordonneP=fichier.nextInt();
+			typeP=fichier.nextInt();
+			if(typeP==2){
+				portes.add(new PorteBonus(new Vector2(abscisseP,ordonneP)));
+			}
+			else if(typeP==1){
+				portes.add(new PorteObjective(new Vector2(abscisseP,ordonneP)));
+			}
+			else{
+				portes.add(new Porte(new Vector2(abscisseP,ordonneP)));
+			}
+		}
+		
+		
 	}
 	public void draw(SpriteBatch batch){
 		//Boucle pour lire les tiles
@@ -76,6 +107,10 @@ public class Map {
 		//Boucle pour lire les ascenseurs
 		for(int i=0;i<ascenseurs.size();i++){
 			ascenseurs.get(i).draw(batch);
+		}
+		//Boucle pour lire les portes
+		for(int i=0;i<portes.size();i++){
+			portes.get(i).draw(batch);
 		}
 	}
 	public void monter(Personnage perso){
