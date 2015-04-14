@@ -29,7 +29,7 @@ public class JustCops extends ApplicationAdapter {
 		batch = new SpriteBatch();		
 		//Creation des personnages
 		if(Personnage.nbJoueurs<=JOUEURMAX){
-			perso=new Personnage(new Vector2(3,3));
+			perso=new Personnage(new Vector2(19,HAUTEUR-132));
 		}
 		try {
 			map=new Map("level1.txt");
@@ -56,6 +56,9 @@ public class JustCops extends ApplicationAdapter {
 		map.collision(perso);
 		//Deplacement du personnage
 		perso.deplacement();
+		//Les ascenseur bouge
+		map.monter(perso);
+		//Affichage
 		batch.begin();
 		map.draw(batch);
 		perso.draw(batch);

@@ -11,6 +11,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
 public class Map {
+	//Taille de la fenetre
+	public static final int LARGEUR=640;
+	public static final int HAUTEUR=480;
 	final static int TTILE=3;
 	//Attribut
 	private String nomLevel;
@@ -20,12 +23,22 @@ public class Map {
 	private Texture rendu;
 	//Liste des Tiles
 	private ArrayList<Tile> tiles;
+	//Liste d'ascenseur
+	private ArrayList<Ascenseur> ascenseurs;
+	private int nbAscenseur;
+	//Liste des portes et gestion des objectifs
+	private ArrayList<Porte> portes;
+	private int nbPortes;
+	private int nbObjectifs;
+	private int nbBonus;
 	//Tile pouvant être traverser
 	private int numTile;
 	
 	Map(String nomLevel) throws FileNotFoundException{
 		taille=new Vector2();
 		tiles=new ArrayList<Tile>();
+		ascenseurs=new ArrayList<Ascenseur>();
+		portes=new ArrayList<Porte>();
 		//Scanner de fichier
 		Scanner fichier;
 		//Fichier tile du niveau
@@ -46,14 +59,63 @@ public class Map {
 				//l'id du tile est traité
 				int numTile=fichier.nextInt();
 				//Création du tile
-				tiles.add(new Tile(new Vector2(j*TTILE,i*TTILE),new TextureRegion(rendu,numTile*TTILE,0,TTILE,TTILE),numTile));
+				tiles.add(new Tile(new Vector2(j*TTILE,HAUTEUR-i*TTILE-TTILE),new TextureRegion(rendu,numTile*TTILE,0,TTILE,TTILE),numTile));
 			}
 		}
+		//Va prendre la valeur du nombre d'ascenseur
+		nbAscenseur=fichier.nextInt();
+		int abscisseA;
+		int ordonneA;
+		int nbEtagesA;
+		//Boucle pour entrer les ascenseurs en fonction du fichier
+		for(int i=0;i<nbAscenseur;i++){
+			abscisseA=fichier.nextInt();
+			ordonneA=fichier.nextInt();
+			nbEtagesA=fichier.nextInt();
+			ascenseurs.add(new Ascenseur(new Vector2(abscisseA,ordonneA),nbEtagesA));
+		}
+		//gestion des porte;
+		nbPortes=fichier.nextInt();
+		nbObjectifs=fichier.nextInt();
+		nbBonus=fichier.nextInt();
+		int abscisseP;
+		int ordonneP;
+		int typeP;
+		//Boucle pour entrer les portes
+		for(int i=0;i<nbPortes;i++){
+			abscisseP=fichier.nextInt();
+			ordonneP=fichier.nextInt();
+			typeP=fichier.nextInt();
+			if(typeP==2){
+				portes.add(new PorteBonus(new Vector2(abscisseP,ordonneP)));
+			}
+			else if(typeP==1){
+				portes.add(new PorteObjective(new Vector2(abscisseP,ordonneP)));
+			}
+			else{
+				portes.add(new Porte(new Vector2(abscisseP,ordonneP)));
+			}
+		}
+		
+		
 	}
 	public void draw(SpriteBatch batch){
 		//Boucle pour lire les tiles
 		for(int i=0;i<tiles.size();i++){
 			tiles.get(i).afficher(batch);
+		}
+		//Boucle pour lire les ascenseurs
+		for(int i=0;i<ascenseurs.size();i++){
+			ascenseurs.get(i).draw(batch);
+		}
+		//Boucle pour lire les portes
+		for(int i=0;i<portes.size();i++){
+			portes.get(i).draw(batch);
+		}
+	}
+	public void monter(Personnage perso){
+		for(int i=0;i<ascenseurs.size();i++){
+			ascenseurs.get(i).monter(perso);
 		}
 	}
 	//Collision entre la map et le personnage
@@ -74,10 +136,10 @@ public class Map {
 				Vector2 localisationTile=new Vector2(tiles.get(cptTile).getLocalisation());
 				//Test des différente collision
 				//En abscisse
-				if((localisationTile.x+5*TTILE-1<localisationPerso.x+taillePerso.x  && localisationTile.x+TTILE >localisationPerso.x)){
+				if((localisationPerso.x<localisationTile.x+TTILE && localisationPerso.x>localisationTile.x)||(localisationPerso.x+taillePerso.x<localisationTile.x+TTILE && localisationPerso.x+taillePerso.x>localisationTile.x)){
 					//En ordonné
 					if((localisationTile.y<localisationPerso.y+taillePerso.y && localisationTile.y>localisationPerso.y)||(localisationTile.y+TTILE<localisationPerso.y+taillePerso.y && localisationTile.y+TTILE>localisationPerso.y)){
-						if(tiles.get(cptTile).getNum()==0){
+						if(tiles.get(cptTile).getNum()==1){
 							perso.setMouvement(new Vector2(0,0));
 						}
 					}
