@@ -9,10 +9,10 @@ public class Personnage {
 	//Pour le mode deux joueurs
 	static final int JOUEURMAX=2;
 	static final int NBTEXTURES=3;
-	//Nombre de joueur stocké
+	//Nombre de joueur stockï¿½
 	static int nbJoueurs=0;
 	//Attribut
-	//Vector2 gère les déplacements d'une entité
+	//Vector2 gï¿½re les dï¿½placements d'une entitï¿½
 	private Vector2 localisation;
 	private Vector2 mouvement;
 	//Gestion des textures
@@ -29,14 +29,14 @@ public class Personnage {
 	private int cptJump=0;
 	//Compteur de texture
 	private int cptText=0;
-	//Booléen pour le saut
+	//Boolï¿½en pour le saut
 	private boolean enCours=false;
 	//Constructeur
 	Personnage(Vector2 localisation){
 		//Initialisation des positions
 		this.localisation=new Vector2();
 		mouvement = new Vector2();
-		//Entré de la texture
+		//Entrï¿½ de la texture
 		if(nbJoueurs==0){
 			perso=new Texture("PolicierMoveRight0.png");
 		}
@@ -48,7 +48,7 @@ public class Personnage {
 		this.localisation=localisation;
 		//Initialisation de la vie
 		vie=3;
-		//Création des evenements du personnage
+		//Crï¿½ation des evenements du personnage
 		event= new Evenement();
 		//Gestion des texture
 		sesTexturesDroites=new Texture[NBTEXTURES];
@@ -62,15 +62,15 @@ public class Personnage {
 		//On augmente le nombre de joueur
 		nbJoueurs++;
 	}
-	//Méthode pour affichage du personnage
+	//Mï¿½thode pour affichage du personnage
 	public void draw(SpriteBatch batch){
 		batch.draw(perso, localisation.x,localisation.y);
 	}
-	//Méthode pour la perte de vie
+	//Mï¿½thode pour la perte de vie
 	public void blesser(){
 		vie--;
 	}
-	//actions et déplacements
+	//actions et dï¿½placements
 	public void update(){
 		//Deplacement vers la droite
 		if(event.getDeplacement(Evenement.DROITE)){
@@ -93,12 +93,12 @@ public class Personnage {
 		}
 		//Saut
 		if(event.getAction(0)|| enCours){
-			//Initialisation de la séparation du saut
+			//Initialisation de la sï¿½paration du saut
 			if(!enCours){
 				enCours=true;
 				cptJump=0;
 			}
-			//Séparation du saut
+			//Sï¿½paration du saut
 			else if(enCours && cptJump<=10){
 				if(cptJump==0){
 					mouvement.y+=2;
@@ -138,7 +138,7 @@ public class Personnage {
 			}
 		}
 	}
-	//Mise à jour des Evenement
+	//Mise ï¿½ jour des Evenement
 	public void updateEvenement(){
 		event.update();
 	}
@@ -165,5 +165,8 @@ public class Personnage {
 	public void setMouvement(Vector2 move){
 		mouvement.x=move.x;
 		mouvement.y=move.y;
+	}
+	public Vector2 getCenter(){
+		return(new Vector2(localisation.x+(taille.x/2),localisation.y+(taille.y/2)));
 	}
 }
