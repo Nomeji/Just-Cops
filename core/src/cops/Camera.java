@@ -15,8 +15,14 @@ public class Camera {
 	}
 	
 	public void update(){
-		cam.position.set(sonPerso.getCenter(),0); // On centre la caméra sur le perso
-		cam.update();
+		if(sonPerso.getInMouv()){ // On vérifie que le perso n'est pas en saut.
+			cam.position.set(sonPerso.getCenter().x,cam.position.y,0); // On centre la caméra sur le perso, uniquement en x
+			cam.update();
+		}
+		else{
+			cam.position.set(sonPerso.getCenter(),0); // On centre la caméra sur le perso
+			cam.update();
+		}
 	}
 	
 	public OrthographicCamera getCamera(){

@@ -80,7 +80,6 @@ public class Personnage {
 			if(cptText>=NBTEXTURES){
 				cptText=0;
 			}
-			
 		}
 		//Deplacement vers la gauche
 		else if(event.getDeplacement(Evenement.GAUCHE)){
@@ -166,7 +165,12 @@ public class Personnage {
 		mouvement.x=move.x;
 		mouvement.y=move.y;
 	}
+	//Getteur du centre du perso
 	public Vector2 getCenter(){
 		return(new Vector2(localisation.x+(taille.x/2),localisation.y+(taille.y/2)));
+	}
+	//Getteur de mouvement en cours
+	public boolean getInMouv(){
+		return(enCours);
 	}
 }
