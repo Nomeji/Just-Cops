@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="223" xmlns:dc="http://purl.org/dc/elements/1.1/" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0.1" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.date_last_changed">Sat Jun  6 18:13:25 2015
+</m>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.date">Sat Jun  6 18:07:05 2015
+</m>
+<m key="dc.format">application/x-abiword</m>
+</metadata>
+<rdf>
+</rdf>
+<history version="2" edit-time="968" last-saved="1433607205" uid="cca9d0f2-0c64-11e5-9e2f-b90f63667e1b">
+<version id="2" started="1433606825" uid="f5f6b0c2-0c66-11e5-9e2f-b90f63667e1b" auto="0" top-xid="4"/>
+</history>
+<styles>
+<s type="P" name="header" basedon="_Normal" props="line-height:1.000000; margin-bottom:0.000000pt; tabstops:3.150000in/C0,6.300000in/R0"/>
+<s type="P" name="_Normal" basedon="Normal"/>
+<s type="P" name="Normal" basedon="Normal" followedby="Current Settings" props="lang:ar-SA; font-size:11.000000pt; margin-bottom:10.000000pt; font-family:Times New Roman; line-height:1.150000"/>
+<s type="P" name="footer" basedon="_Normal" props="line-height:1.000000; margin-bottom:0.000000pt; tabstops:3.150000in/C0,6.300000in/R0"/>
+<s type="P" name="Balloon Text" basedon="_Normal" props="line-height:1.000000; margin-bottom:0.000000pt; font-family:Tahoma; font-size:8.000000pt"/>
+<s type="C" name="Default Paragraph Font" basedon="Normal"/>
+<s type="C" name="En-tête Car" basedon="Default Paragraph Font"/>
+<s type="P" name="No List" basedon="Normal"/>
+<s type="P" name="Normal Table" basedon="Normal"/>
+<s type="C" name="Pied de page Car" basedon="Default Paragraph Font"/>
+<s type="P" name="Table Grid" basedon="Normal Table" props="bot-style:1; top-style:1; margin-bottom:0.000000pt; left-thickness:0.500000pt; right-style:1; right-thickness:0.500000pt; line-height:1.000000; top-thickness:0.500000pt; left-style:1; bot-thickness:0.500000pt"/>
+<s type="C" name="Texte de bulles Car" basedon="Default Paragraph Font" props="font-family:Tahoma; font-size:8.000000pt"/>
+</styles>
+<pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+<section header="2" header-even="1" footer="3" footer-even="5" footer-first="4" header-first="0" xid="131" props="page-margin-right:0.984028in; column-line:off; page-margin-left:0.984028in; columns:1; page-margin-top:0.984028in; page-margin-bottom:0.984028in">
+<p xid="132" props="text-align:center"><c props="font-family:Times New Roman">LES ACTIVITES DU PROJET TUTEURE</c></p>
+<p xid="133"><c></c></p>
+<table xid="134" props="list-tag:1; bot-style:1; top-thickness:0.500000pt; bot-thickness:0.500000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-thickness:0.500000pt; right-thickness:0.500000pt; margin-bottom:0.000000pt; left-style:1; line-height:1.000000; right-style:1; top-style:1">
+<cell xid="135" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:1; top-attach:0">
+<p xid="136" props="text-align:center"><c props="font-family:Times New Roman">N° de l’activité</c></p>
+</cell>
+<cell xid="137" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:1; top-attach:0">
+<p xid="138" props="text-align:center"><c props="font-family:Times New Roman">Nom de l’activité</c></p>
+</cell>
+<cell xid="139" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:1; top-attach:0">
+<p xid="140" props="text-align:center"><c props="font-family:Times New Roman">Description de l’activité</c></p>
+</cell>
+<cell xid="141" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:1; top-attach:0">
+<p xid="142" props="text-align:center"><c props="font-family:Times New Roman">Durée de l’activité</c><bookmark type="start" name="_GoBack" xid="143"/><bookmark type="end" name="_GoBack" xid="144"/></p>
+</cell>
+<cell xid="145" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:2; top-attach:1">
+<p xid="146"><c props="font-family:Times New Roman">1</c></p>
+</cell>
+<cell xid="147" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:2; top-attach:1">
+<p xid="148">Définir le langage et la librairie utilisé</p>
+</cell>
+<cell xid="149" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:2; top-attach:1">
+<p xid="150">Avant toute chose, nous divions choisir comment serait réalisé le jeu</p>
+</cell>
+<cell xid="151" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:2; top-attach:1">
+<p xid="152">3 jours</p>
+</cell>
+<cell xid="153" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:3; top-attach:2">
+<p xid="154"><c props="font-family:Times New Roman">2</c></p>
+</cell>
+<cell xid="155" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:3; top-attach:2">
+<p xid="156">Création et déplacement d’un personange</p>
+</cell>
+<cell xid="157" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:3; top-attach:2">
+<p xid="158">L’une des étape les plus basique consiste à réussir à déplacer un personnage de droite à gauche et de sauter.</p>
+</cell>
+<cell xid="159" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:3; top-attach:2">
+<p xid="160">2 jours</p>
+</cell>
+<cell xid="161" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:4; top-attach:3">
+<p xid="162"><c props="font-family:Times New Roman">3</c></p>
+</cell>
+<cell xid="163" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:4; top-attach:3">
+<p xid="164">Création de la map</p>
+</cell>
+<cell xid="165" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:4; top-attach:3">
+<p xid="166">Création d’une map en utilisant un système de tuilles</p>
+</cell>
+<cell xid="167" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:4; top-attach:3">
+<p xid="168">1 jour</p>
+</cell>
+<cell xid="169" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:5; top-attach:4">
+<p xid="170"><c props="font-family:Times New Roman">4</c></p>
+</cell>
+<cell xid="171" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:5; top-attach:4">
+<p xid="172">Collision entre le joueur et la map</p>
+</cell>
+<cell xid="173" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:5; top-attach:4">
+<p xid="174">Le personnage doit se hurter contre les murs.</p>
+</cell>
+<cell xid="175" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:5; top-attach:4">
+<p xid="176">1 jour</p>
+</cell>
+<cell xid="177" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:6; top-attach:5">
+<p xid="178"><c props="font-family:Times New Roman">5</c></p>
+</cell>
+<cell xid="179" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:6; top-attach:5">
+<p xid="180"> Assenceurs</p>
+</cell>
+<cell xid="181" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:6; top-attach:5">
+<p xid="182">La map doit contenir des assenceurs pouvant bouger et le personnage peut y entrer pour changer d’étage</p>
+</cell>
+<cell xid="183" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:6; top-attach:5">
+<p xid="184">2 jours</p>
+</cell>
+<cell xid="185" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:7; top-attach:6">
+<p xid="186"><c props="font-family:Times New Roman">6</c></p>
+</cell>
+<cell xid="187" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:7; top-attach:6">
+<p xid="188">Portes</p>
+</cell>
+<cell xid="189" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:7; top-attach:6">
+<p xid="190">La map contient des portes avec lequels le personnage peut interagir</p>
+</cell>
+<cell xid="191" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:7; top-attach:6">
+<p xid="192">1/2 journée</p>
+</cell>
+<cell xid="193" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:8; top-attach:7">
+<p xid="194"><c props="font-family:Times New Roman">7</c></p>
+</cell>
+<cell xid="195" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:8; top-attach:7">
+<p xid="196">Caméra</p>
+</cell>
+<cell xid="197" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:8; top-attach:7">
+<p xid="198">Une caméra permet d’avoir une distance approprié et elle suit les personnages</p>
+</cell>
+<cell xid="199" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:8; top-attach:7">
+<p xid="200">1 jour</p>
+</cell>
+<cell xid="201" props="bot-style:1; bot-thickness:0.500000pt; right-attach:1; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:0; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:9; top-attach:8">
+<p xid="202"><c props="font-family:Times New Roman">8<br/><br/><br/><br/><br/></c></p>
+</cell>
+<cell xid="203" props="bot-style:1; bot-thickness:0.500000pt; right-attach:2; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:1; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:9; top-attach:8">
+<p xid="204">Animation</p>
+</cell>
+<cell xid="205" props="bot-style:1; bot-thickness:0.500000pt; right-attach:3; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:2; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:9; top-attach:8">
+<p xid="206">Le personnage bouge lorsqu’il se déplace à l’aide d’un sprit qui est ensuite animé.</p>
+</cell>
+<cell xid="207" props="bot-style:1; bot-thickness:0.500000pt; right-attach:4; left-thickness:0.500000pt; right-thickness:0.500000pt; right-style:1; left-attach:3; line-height:1.000000; top-style:1; margin-bottom:0.000000pt; table-column-props:83.400000pt/92.100000pt/184.300000pt/104.600000pt/; left-style:1; top-thickness:0.500000pt; bot-attach:9; top-attach:8">
+<p xid="208">1 jour</p>
+</cell>
+<cell xid="68" props="bot-attach:10; left-attach:0; right-attach:1; top-attach:9">
+<p xid="69">9</p>
+</cell>
+<cell xid="71" props="bot-attach:10; left-attach:1; right-attach:2; top-attach:9">
+<p xid="72">Gravité</p>
+</cell>
+<cell xid="74" props="bot-attach:10; left-attach:2; right-attach:3; top-attach:9">
+<p xid="75">Lorsque le personnage ne touche pas le sol il tombe.</p>
+</cell>
+<cell xid="77" props="bot-attach:10; left-attach:3; right-attach:4; top-attach:9">
+<p xid="78">1 jour</p>
+</cell>
+<cell xid="82" props="bot-attach:11; left-attach:0; right-attach:1; top-attach:10">
+<p xid="83">10</p>
+</cell>
+<cell xid="85" props="bot-attach:11; left-attach:1; right-attach:2; top-attach:10">
+<p xid="86">HUD</p>
+</cell>
+<cell xid="88" props="bot-attach:11; left-attach:2; right-attach:3; top-attach:10">
+<p xid="89">Une interface montre le nombre de sachet qu’il reste à trouver et le nombre de vie restant</p>
+</cell>
+<cell xid="91" props="bot-attach:11; left-attach:3; right-attach:4; top-attach:10">
+<p xid="92">1 jour</p>
+</cell>
+<cell xid="94" props="bot-attach:12; left-attach:0; right-attach:1; top-attach:11">
+<p xid="95">11</p>
+</cell>
+<cell xid="97" props="bot-attach:12; left-attach:1; right-attach:2; top-attach:11">
+<p xid="98">Escalier</p>
+</cell>
+<cell xid="100" props="bot-attach:12; left-attach:2; right-attach:3; top-attach:11">
+<p xid="101">Des escaliers permettent de changer d’étage.</p>
+</cell>
+<cell xid="103" props="bot-attach:12; left-attach:3; right-attach:4; top-attach:11">
+<p xid="104">1 jour</p>
+</cell>
+<cell xid="107" props="bot-attach:13; left-attach:0; right-attach:1; top-attach:12">
+<p xid="108">12</p>
+</cell>
+<cell xid="110" props="bot-attach:13; left-attach:1; right-attach:2; top-attach:12">
+<p xid="111">Musique</p>
+</cell>
+<cell xid="113" props="bot-attach:13; left-attach:2; right-attach:3; top-attach:12">
+<p xid="114">Ajouter une musique</p>
+</cell>
+<cell xid="116" props="bot-attach:13; left-attach:3; right-attach:4; top-attach:12">
+<p xid="117">1/2 jour</p>
+</cell>
+<cell xid="119" props="bot-attach:14; left-attach:0; right-attach:1; top-attach:13">
+<p xid="120">13</p>
+</cell>
+<cell xid="122" props="bot-attach:14; left-attach:1; right-attach:2; top-attach:13">
+<p xid="123">Dossier</p>
+</cell>
+<cell xid="125" props="bot-attach:14; left-attach:2; right-attach:3; top-attach:13">
+<p xid="126">Faire le dossier</p>
+</cell>
+<cell xid="128" props="bot-attach:14; left-attach:3; right-attach:4; top-attach:13">
+<p xid="129">2 jours</p>
+</cell>
+</table>
+<p xid="209"><c></c></p>
+</section>
+<section type="header-first" id="0" xid="210">
+<p style="header" xid="211"><c></c></p>
+</section>
+<section type="header-even" id="1" xid="212">
+<p style="header" xid="213"><c></c></p>
+</section>
+<section type="header" id="2" xid="214">
+<p style="header" xid="215"><c></c></p>
+</section>
+<section type="footer" id="3" xid="216">
+<p style="footer" xid="217"><c props="font-family:Times New Roman">Liste des activités, Projet tuteuré, JM.Page </c><field type="page_number" xid="218"></field></p>
+<p style="footer" xid="219"><c></c></p>
+</section>
+<section type="footer-first" id="4" xid="220">
+<p style="footer" xid="221"><c></c></p>
+</section>
+<section type="footer-even" id="5" xid="222">
+<p style="footer" xid="223"></p>
+</section>
+</abiword>
