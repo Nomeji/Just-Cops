@@ -37,7 +37,7 @@ public class JustCops extends ApplicationAdapter {
 			System.out.println("Erreur, la map n'existe pas");
 		}
 		// Création de la caméra
-		cam = new Camera(perso);
+		cam = new Camera(perso,map);
 		cam.update();
 	}
 	@Override

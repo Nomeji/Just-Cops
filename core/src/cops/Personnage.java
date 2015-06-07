@@ -2,6 +2,7 @@ package cops;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
@@ -19,6 +20,9 @@ public class Personnage {
 	private Texture perso;
 	private Texture sesTexturesDroites[];
 	private Texture sesTexturesGauches[];
+	// Animation
+	private Animation animMarcheGauche;
+	private Animation animMarcheDroite;
 	//Gestion de la vie
 	private int vie;
 	//Gestion de la taille du personnage
@@ -59,6 +63,8 @@ public class Personnage {
 		sesTexturesGauches[0]=new Texture("PolicierMoveLeft0.png");
 		sesTexturesGauches[1]=new Texture("PolicierMoveLeft1.png");
 		sesTexturesGauches[2]=new Texture("PolicierMoveLeft2.png");
+		//Animation
+		//animMarcheGauche = new Animation(0.025f,sesTexturesGauches);
 		//On augmente le nombre de joueur
 		nbJoueurs++;
 	}
@@ -70,6 +76,7 @@ public class Personnage {
 	public void blesser(){
 		vie--;
 	}
+	
 	//actions et d�placements
 	public void update(){
 		//Deplacement vers la droite

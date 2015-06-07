@@ -17,7 +17,7 @@ public class Map {
 	final static int TTILE=3;
 	//Attribut
 	private String nomLevel;
-	//Taille de la map en abscisse et en ordonné
+	//Taille de la map en abscisse et en ordonnï¿½
 	private Vector2 taille;
 	//Rendu de la map
 	private Texture rendu;
@@ -31,7 +31,7 @@ public class Map {
 	private int nbPortes;
 	private int nbObjectifs;
 	private int nbBonus;
-	//Tile pouvant être traverser
+	//Tile pouvant ï¿½tre traverser
 	private int numTile;
 	
 	Map(String nomLevel) throws FileNotFoundException{
@@ -43,9 +43,9 @@ public class Map {
 		Scanner fichier;
 		//Fichier tile du niveau
 		String fichierTiles;
-		//On ouvre le fichier où sont contenu les infos sur la map
+		//On ouvre le fichier oï¿½ sont contenu les infos sur la map
 		fichier=new Scanner(new File("../core/assets/"+nomLevel));
-		//Première ligne la taille multiplié par les tiles
+		//Premiï¿½re ligne la taille multipliï¿½ par les tiles
 		taille.x=fichier.nextInt();
 		taille.y=fichier.nextInt();
 		fichier.nextLine();
@@ -53,12 +53,12 @@ public class Map {
 		fichierTiles=fichier.nextLine();
 		//On entre le fichier pour les tile dans le rendu
 		rendu=new Texture("../core/assets/"+fichierTiles);
-		//Boucles de création de la map
+		//Boucles de crï¿½ation de la map
 		for(int i=0;i<taille.y;i++){
 			for(int j=0;j<taille.x;j++){
-				//l'id du tile est traité
+				//l'id du tile est traitï¿½
 				int numTile=fichier.nextInt();
-				//Création du tile
+				//Crï¿½ation du tile
 				tiles.add(new Tile(new Vector2(j*TTILE,HAUTEUR-i*TTILE-TTILE),new TextureRegion(rendu,numTile*TTILE,0,TTILE,TTILE),numTile));
 			}
 		}
@@ -122,10 +122,10 @@ public class Map {
 	public void collision(Personnage perso){
 		
 		Vector2 localisationPerso=new Vector2(perso.getLocalisation());
-		//On voit où va le personnage
+		//On voit oï¿½ va le personnage
 		localisationPerso.x+=perso.getMouvement().x;
 		localisationPerso.y+=perso.getMouvement().y;
-		//On récupère la taille du personnage
+		//On rï¿½cupï¿½re la taille du personnage
 		Vector2 taillePerso= new Vector2(perso.getTaille());
 		//Compteur de tile
 		int cptTile=0;
@@ -134,10 +134,10 @@ public class Map {
 			for(int j=0;j<taille.x;j++){
 				//On attrape la localisation des tiles dans la liste
 				Vector2 localisationTile=new Vector2(tiles.get(cptTile).getLocalisation());
-				//Test des différente collision
+				//Test des diffï¿½rente collision
 				//En abscisse
 				if((localisationPerso.x<localisationTile.x+TTILE && localisationPerso.x>localisationTile.x)||(localisationPerso.x+taillePerso.x<localisationTile.x+TTILE && localisationPerso.x+taillePerso.x>localisationTile.x)){
-					//En ordonné
+					//En ordonnï¿½
 					if((localisationTile.y<localisationPerso.y+taillePerso.y && localisationTile.y>localisationPerso.y)||(localisationTile.y+TTILE<localisationPerso.y+taillePerso.y && localisationTile.y+TTILE>localisationPerso.y)){
 						if(tiles.get(cptTile).getNum()==1){
 							perso.setMouvement(new Vector2(0,0));
@@ -147,5 +147,9 @@ public class Map {
 				cptTile++;
 			}
 		}
+	}
+	
+	public Vector2 getTaille() { // Getteur de la taille de la map en vecteur 2
+		return taille;
 	}
 }
