@@ -33,6 +33,9 @@ public class Map {
 	private int nbBonus;
 	//Tile pouvant être traverser
 	private int numTile;
+	//Emplacement de victoire
+	private Vector2 posWin;
+	private int tailleWin;
 	
 	Map(String nomLevel) throws FileNotFoundException{
 		taille=new Vector2();
@@ -96,8 +99,11 @@ public class Map {
 				portes.add(new Porte(new Vector2(abscisseP,ordonneP)));
 			}
 		}
-		
-		
+		//Initialisation de l'emplacement pour la victoire
+		posWin=new Vector2();
+		posWin.x=fichier.nextInt();
+		posWin.y=fichier.nextInt();
+		tailleWin=fichier.nextInt();
 	}
 	public void draw(SpriteBatch batch){
 		//Boucle pour lire les tiles
@@ -115,8 +121,24 @@ public class Map {
 	}
 	public void monter(Personnage perso){
 		for(int i=0;i<ascenseurs.size();i++){
-			ascenseurs.get(i).monter(perso);
+			ascenseurs.get(i).monter(perso,i);
 		}
+	}
+	//Utilisation des portes
+	public void usePorte(Personnage perso){
+		int rep;
+		//Boucle pour lire les portes
+		for(int i=0;i<portes.size();i++){
+			rep=portes.get(i).use(perso);
+			if(rep==0){
+				nbObjectifs--;
+				System.out.println("Porte restante :"+nbObjectifs);
+			}
+			else if(rep==1){
+				nbBonus--;
+			}
+		}
+		
 	}
 	//Collision entre la map et le personnage
 	public void collision(Personnage perso){
@@ -136,7 +158,7 @@ public class Map {
 				Vector2 localisationTile=new Vector2(tiles.get(cptTile).getLocalisation());
 				//Test des différente collision
 				//En abscisse
-				if((localisationPerso.x<localisationTile.x+TTILE && localisationPerso.x>localisationTile.x)||(localisationPerso.x+taillePerso.x<localisationTile.x+TTILE && localisationPerso.x+taillePerso.x>localisationTile.x)){
+				if((localisationPerso.x<localisationTile.x+TTILE && localisationPerso.x>localisationTile.x-12)||(localisationPerso.x+taillePerso.x<localisationTile.x+TTILE && localisationPerso.x+taillePerso.x>localisationTile.x)){
 					//En ordonné
 					if((localisationTile.y<localisationPerso.y+taillePerso.y && localisationTile.y>localisationPerso.y)||(localisationTile.y+TTILE<localisationPerso.y+taillePerso.y && localisationTile.y+TTILE>localisationPerso.y)){
 						if(tiles.get(cptTile).getNum()==1){
@@ -147,5 +169,19 @@ public class Map {
 				cptTile++;
 			}
 		}
+	}
+	//Fin de la map
+	public boolean win(Personnage perso){
+		//Si le perso a pris tout les objectifs et est positionné au bonne endroit alors retourne vrai
+		if((nbObjectifs==0)&&(perso.getLocalisation().x>=posWin.x && perso.getLocalisation().x+perso.getTaille().x<=posWin.x+tailleWin)&&(perso.getLocalisation().y==posWin.y)){
+			return(true);
+		}
+		else{
+			return(false);
+		}
+	}
+	//Gravité
+	public void gravity(Personnage perso){
+		perso.gravity(tiles);
 	}
 }

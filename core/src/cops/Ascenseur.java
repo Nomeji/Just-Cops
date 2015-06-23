@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Ascenseur {
 	//Taille d'un étage
-	final static int TAILLETAGE=33;
+	final static int TAILLETAGE=34;
 	//Attribut
 	private Vector2 localisation;
 	private Vector2 taille;
@@ -27,8 +27,8 @@ public class Ascenseur {
 		taille.y=texture.getWidth();
 		this.nbEtages=nbEtages;
 	}
-	//L'ascenseur monte
-	public void monter(Personnage perso){
+	//L'ascenseur monte et le personnage aussi si il est dans un ascenseur
+	public void monter(Personnage perso, int numAscenseur){
 		//L'ascenseur monte
 		if(cptEtages<=nbEtages*TAILLETAGE+1){
 			if(monte){
@@ -49,18 +49,39 @@ public class Ascenseur {
 				}
 			}
 		}
-		//On vérifie l'abscisse dans le cas où il monte
-		if((perso.getLocalisation().x>=localisation.x && perso.getLocalisation().x<=localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& monte){
-			//Puis l'ordonné
-			if(perso.getLocalisation().y>=localisation.y && perso.getLocalisation().y<=localisation.y+1){
-				perso.getLocalisation().y++;
+		//Si le personnage entre dans un ascenseur alors le processus commence
+		if(perso.getAscenseur()==-1){
+			//On vérifie l'abscisse dans le cas où il monte
+			if((perso.getLocalisation().x>=localisation.x && perso.getLocalisation().x<=localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& monte){
+				//Puis l'ordonné
+				if(perso.getLocalisation().y>=localisation.y &&	perso.getLocalisation().y+perso.getTaille().y<=localisation.y+taille.y){
+					perso.getLocalisation().y++;
+					perso.setAscenseur(numAscenseur);
+				}
+			}
+			//On vérifie l'abscisse dans la cas où l'ascenseur descend
+			if((perso.getLocalisation().x>localisation.x && perso.getLocalisation().x<localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& !monte){
+				//Puis l'ordonné
+				if(perso.getLocalisation().y>=localisation.y &&	perso.getLocalisation().y+perso.getTaille().y<=localisation.y+taille.y){
+					perso.getLocalisation().y--;
+					perso.setAscenseur(numAscenseur);
+				}
 			}
 		}
-		//On vérifie l'abscisse dans la cas où l'ascenseur descend
-		if((perso.getLocalisation().x>localisation.x && perso.getLocalisation().x<localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& !monte){
-			//Puis l'ordonné
-			if(perso.getLocalisation().y>=localisation.y && perso.getLocalisation().y<=localisation.y+2){
+		//Le processus continue si le personnage reste dans l'ascenseur
+		//Vérification si il s'agit bien du même ascenseur
+		if(perso.getAscenseur()!=-1 && numAscenseur==perso.getAscenseur()){
+			//Quand il monte
+			if((perso.getLocalisation().x>=localisation.x && perso.getLocalisation().x<=localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& monte){
+				perso.getLocalisation().y++;
+			}
+			//Quand il descend
+			else if((perso.getLocalisation().x>localisation.x && perso.getLocalisation().x<localisation.x+taille.x)&&(perso.getLocalisation().x+perso.getTaille().x>=localisation.x && perso.getLocalisation().x+perso.getTaille().x<=localisation.x+taille.x)&& !monte){
 				perso.getLocalisation().y--;
+			}
+			//Quand il est en dehors de l'ascenseur
+			else{
+				perso.setAscenseur(-1);
 			}
 		}
 	}

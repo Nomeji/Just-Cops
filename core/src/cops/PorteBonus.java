@@ -11,7 +11,15 @@ public class PorteBonus extends Porte{
 		super(localisation);
 		super.texture=new Texture("../core/assets/porteBonus.png");
 	}
-	public void use(){
-		super.texture=new Texture("porte.png");
+	//Utilisation de la porte
+	public int use(Personnage perso){
+		//Gestion de la localisation du personnage
+		if((((perso.getLocalisation().x>=localisation.x && perso.getLocalisation().x<=localisation.x+taille.x) && (perso.getLocalisation().y>=localisation.y && perso.getLocalisation().y<=localisation.y+taille.y && !utiliser)))&& perso.getAction(0)){
+			//Quand une porte est utilisé elle redevient une porte normale
+			super.texture=new Texture("porte.png");
+			utiliser=true;
+			return(1);
+		}
+		return(-1);
 	}
 }
