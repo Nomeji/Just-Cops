@@ -1,5 +1,7 @@
 package cops;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -35,6 +37,8 @@ public class Personnage {
 	private int cptText=0;
 	//Bool�en pour le saut
 	private boolean enCours=false;
+	//Entier pour savoir si le personnage est dans un ascenseur
+	private int ascenseur=-1;
 	//Constructeur
 	Personnage(Vector2 localisation){
 		//Initialisation des positions
@@ -87,6 +91,8 @@ public class Personnage {
 			if(cptText>=NBTEXTURES){
 				cptText=0;
 			}
+			taille.x=perso.getHeight();
+			taille.y=perso.getWidth();
 		}
 		//Deplacement vers la gauche
 		else if(event.getDeplacement(Evenement.GAUCHE)){
@@ -96,6 +102,8 @@ public class Personnage {
 			if(cptText>=NBTEXTURES){
 				cptText=0;
 			}
+			taille.x=perso.getHeight();
+			taille.y=perso.getWidth();
 		}
 		//Saut
 		if(event.getAction(0)|| enCours){
@@ -105,7 +113,7 @@ public class Personnage {
 				cptJump=0;
 			}
 			//S�paration du saut
-			else if(enCours && cptJump<=10){
+			else if(enCours && cptJump<=5){
 				if(cptJump==0){
 					mouvement.y+=2;
 				}
@@ -121,21 +129,21 @@ public class Personnage {
 				else if(cptJump==5){
 					mouvement.y+=6;
 				}
-				else if(cptJump==6){
-					mouvement.y-=6;
-				}
-				else if(cptJump==7){
-					mouvement.y-=5;
-				}
-				else if(cptJump==8){
-					mouvement.y-=4;
-				}
-				else if(cptJump==9){
-					mouvement.y-=3;
-				}
-				else if(cptJump==10){
-					mouvement.y-=2;
-				}
+//				else if(cptJump==6){
+//					mouvement.y-=6;
+//				}
+//				else if(cptJump==7){
+//					mouvement.y-=5;
+//				}
+//				else if(cptJump==8){
+//					mouvement.y-=4;
+//				}
+//				else if(cptJump==9){
+//					mouvement.y-=3;
+//				}
+//				else if(cptJump==10){
+//					mouvement.y-=2;
+//				}
 				cptJump++;
 			}
 			//Fin du saut
@@ -179,5 +187,46 @@ public class Personnage {
 	//Getteur de mouvement en cours
 	public boolean getInMouv(){
 		return(enCours);
+	}
+	//Getteur d'action
+	public boolean getAction(int id){
+		return(event.getAction(id));
+	}
+	//Gravit�
+	public void gravity(ArrayList<Tile> tiles){
+		//Compteur de tile solid
+		int cptTiles=0;
+		Vector2 i=new Vector2(localisation.x,localisation.y);
+		while(i.x<=localisation.x+taille.x && cptTiles==0){
+			//Bool�en pour le boucle tant que
+			//Compteur pour le tant que
+			int cpt=0;
+			//Cherche le tile sous le perso
+			while(cpt<tiles.size()){
+				//Trouve le tile
+				if(tiles.get(cpt).getLocalisation().y==localisation.y-3 && tiles.get(cpt).getLocalisation().x>=localisation.x && tiles.get(cpt).getLocalisation().x<=localisation.x+taille.x){
+					//Regarde si il est solid
+					if(tiles.get(cpt).getNum()==1){
+						cptTiles++;
+					}
+				}
+				//On incr�mente le cpt pour regarder le tile suivant
+				cpt++;
+			}
+			cpt=0;
+			i.x++;
+		}
+		if(cptTiles==0 && ascenseur==-1){
+			localisation.y-=1;
+		}
+	}
+	
+	//Setteur du bool�en permettant de savoir si le joueur est dans un ascenseur ou non
+	public void setAscenseur(int num){
+		ascenseur=num;
+	}
+	//Getter du bool�en de l'ascenseur
+	public int getAscenseur(){
+		return(ascenseur);
 	}
 }
