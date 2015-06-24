@@ -26,21 +26,20 @@ public class HUD {
 	private CharSequence strCoeur;
 	
 	HUD(Map m,Personnage p){
-		cameraH = new OrthographicCamera(500,500); // On créer une caméra fixe
-		cameraH.position.set(positionPorte,0);
-		
 		porteIco = new Texture("porte.png"); // On affiche une icone de porte
 		positionPorte = new Vector2(10,400); 
 		
 		nbPorteB = new BitmapFont(); // On créer un bitmap qui affiche le nombre de porte restante
 		strPorte = ""+m.getNbObjectifs();
 		
-		coeurIco = new Texture();
-		positionCoeur = new Vector2(40,400);
+		coeurIco = new Texture("coeurPlein.png");
+		positionCoeur = new Vector2(43,410);
 		
 		nbCoeur = new BitmapFont(); // On créer un bitmap qui affiche le nombre de vie restante
 		strCoeur = ""+p.getVie();
 		
+		cameraH = new OrthographicCamera(500,500); // On créer une caméra fixe
+		cameraH.position.set(positionPorte,0);
 		cameraH.update();
 	}
 	
