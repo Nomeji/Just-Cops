@@ -21,6 +21,7 @@ public class JustCops extends ApplicationAdapter {
 	//Attribut de la partie
 	private SpriteBatch batch;
 	private Personnage perso;
+	//private AnimPerso perso;
 	private Map map;
 	private Camera cam;
 	
@@ -30,6 +31,7 @@ public class JustCops extends ApplicationAdapter {
 		//Creation des personnages
 		if(Personnage.nbJoueurs<=JOUEURMAX){
 			perso=new Personnage(new Vector2(19,HAUTEUR-132));
+			//perso=new AnimPerso(new Vector2(19,HAUTEUR-132));
 		}
 		try {
 			map=new Map("level1.txt");
