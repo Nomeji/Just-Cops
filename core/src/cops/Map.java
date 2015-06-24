@@ -110,9 +110,9 @@ public class Map {
 		posWin.y=fichier.nextInt();
 		tailleWin=fichier.nextInt();
 		nbEnnemies=fichier.nextInt();
-		//Boucle créant les ennemies sur des positions aléatoires de porte
+		//Boucle crï¿½ant les ennemies sur des positions alï¿½atoires de porte
 		for(int i=0;i<nbEnnemies;i++){
-			//On fait un aléatoire pour savoir sur quelle porte va apparaître l'ennemie
+			//On fait un alï¿½atoire pour savoir sur quelle porte va apparaï¿½tre l'ennemie
 			int random;
 			random=(int)Math.random()*(nbPortes-1);
 			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y));
@@ -156,6 +156,9 @@ public class Map {
 			}
 		}
 		
+	}
+	public int getNbObjectifs() {
+		return nbObjectifs;
 	}
 	//Collision entre la map et le personnage
 	public void collision(Personnage perso){

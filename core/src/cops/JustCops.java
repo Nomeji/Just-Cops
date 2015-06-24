@@ -26,6 +26,9 @@ public class JustCops extends ApplicationAdapter {
 	private Camera cam;
 	//Compteur de map
 	private int cptMap=1;
+	//HUD
+	private SpriteBatch hudBatch;
+	private HUD hud;
 	
 	@Override
 	public void create () {
@@ -43,6 +46,9 @@ public class JustCops extends ApplicationAdapter {
 		// CrÃ©ation de la camÃ©ra
 		cam = new Camera(perso,map);
 		cam.update();
+		//CrÃ©ation du HUD
+		hudBatch = new SpriteBatch();
+		hud = new HUD(map,perso);
 	}
 	@Override
 	public void render () {
@@ -56,7 +62,7 @@ public class JustCops extends ApplicationAdapter {
 			// Camera
 			cam.update();
 			batch.setProjectionMatrix(cam.getCamera().combined);
-			//Gravité
+			//Gravitï¿½
 			map.gravity(perso);
 			//Gestion de la collision avec la map
 			map.collision(perso);
@@ -64,14 +70,23 @@ public class JustCops extends ApplicationAdapter {
 			perso.deplacement();
 			//Les ascenseur bouge
 			map.monter(perso);
-			//Les portes sont utilisées
+			//Les portes sont utilisï¿½es
 			map.usePorte(perso);
+			// Mise Ã  jour du nb porte
+			hud.update(map,perso);
 			//Affichage
 			batch.begin();
 			map.draw(batch);
 			perso.draw(batch);
 			batch.end();
-			//Vérification si c'est gagné et possibilité de roulement de map
+			hudBatch.begin();
+			// Affichage du HUD
+			hud.draw(hudBatch);
+			hud.getNbPorteB().draw(hudBatch, hud.getStrPorte(), 30, 425);
+			hud.getNbCoeur().draw(hudBatch,hud.getStrCoeur(),60,425);
+			hudBatch.end();
+			
+			//Vï¿½rification si c'est gagnï¿½ et possibilitï¿½ de roulement de map
 			if(map.win(perso)){
 				cptMap++;
 				batch.dispose();
