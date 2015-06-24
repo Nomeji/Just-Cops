@@ -33,7 +33,7 @@ public class HUD {
 		strPorte = ""+m.getNbObjectifs();
 		
 		coeurIco = new Texture("coeurPlein.png");
-		positionCoeur = new Vector2(40,400);
+		positionCoeur = new Vector2(43,410);
 		
 		nbCoeur = new BitmapFont(); // On créer un bitmap qui affiche le nombre de vie restante
 		strCoeur = ""+p.getVie();
