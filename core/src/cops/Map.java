@@ -113,9 +113,9 @@ public class Map {
 		//Boucle créant les ennemies sur des positions aléatoires de porte
 		for(int i=0;i<nbEnnemies;i++){
 			//On fait un aléatoire pour savoir sur quelle porte va apparaître l'ennemie
-			int random;
-			random=(int)Math.random()*(nbPortes-1);
-			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y));
+			int random=(int)(Math.random()*(nbPortes));
+			System.out.println(random);
+			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x+1,(int)portes.get(random).getLocalisation().y+1));
 		}
 	}
 	public void draw(SpriteBatch batch){
@@ -204,5 +204,12 @@ public class Map {
 	//Gravitï¿½
 	public void gravity(Personnage perso){
 		perso.gravity(tiles);
+	}
+	//Procédure faisant bouger les ennemies
+	public void ennemiesMouvement(){
+		//Parcour de la liste d'ennemies
+		for(int i=0;i<ennemies.size();i++){
+			ennemies.get(i).mouvement(tiles);
+		}
 	}
 }
