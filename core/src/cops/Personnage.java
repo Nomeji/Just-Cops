@@ -113,7 +113,7 @@ public class Personnage {
 				cptJump=0;
 			}
 			//S�paration du saut
-			else if(enCours && cptJump<=5){
+			else if(enCours && cptJump<=20){
 				if(cptJump==0){
 					mouvement.y+=2;
 				}
@@ -129,9 +129,9 @@ public class Personnage {
 				else if(cptJump==5){
 					mouvement.y+=6;
 				}
-//				else if(cptJump==6){
-//					mouvement.y-=6;
-//				}
+				else if(cptJump==20){
+					enCours=false;
+				}
 //				else if(cptJump==7){
 //					mouvement.y-=5;
 //				}
@@ -147,9 +147,6 @@ public class Personnage {
 				cptJump++;
 			}
 			//Fin du saut
-			else{
-				enCours=false;
-			}
 		}
 	}
 	//Mise � jour des Evenement
