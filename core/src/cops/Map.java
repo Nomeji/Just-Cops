@@ -36,12 +36,17 @@ public class Map {
 	//Emplacement de victoire
 	private Vector2 posWin;
 	private int tailleWin;
+	//Gestions des ennemies
+	private int nbEnnemies;
+	private ArrayList<Ennemie> ennemies;
+	
 	
 	Map(String nomLevel) throws FileNotFoundException{
 		taille=new Vector2();
 		tiles=new ArrayList<Tile>();
 		ascenseurs=new ArrayList<Ascenseur>();
 		portes=new ArrayList<Porte>();
+		ennemies=new ArrayList<Ennemie>();
 		//Scanner de fichier
 		Scanner fichier;
 		//Fichier tile du niveau
@@ -104,6 +109,14 @@ public class Map {
 		posWin.x=fichier.nextInt();
 		posWin.y=fichier.nextInt();
 		tailleWin=fichier.nextInt();
+		nbEnnemies=fichier.nextInt();
+		//Boucle créant les ennemies sur des positions aléatoires de porte
+		for(int i=0;i<nbEnnemies;i++){
+			//On fait un aléatoire pour savoir sur quelle porte va apparaître l'ennemie
+			int random;
+			random=(int)Math.random()*(nbPortes-1);
+			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y));
+		}
 	}
 	public void draw(SpriteBatch batch){
 		//Boucle pour lire les tiles
@@ -117,6 +130,10 @@ public class Map {
 		//Boucle pour lire les portes
 		for(int i=0;i<portes.size();i++){
 			portes.get(i).draw(batch);
+		}
+		//Boucle pour lire les ennemies
+		for(int i=0;i<ennemies.size();i++){
+			ennemies.get(i).draw(batch);
 		}
 	}
 	public void monter(Personnage perso){
