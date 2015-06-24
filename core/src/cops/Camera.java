@@ -21,7 +21,7 @@ public class Camera {
 	}
 	
 	public void update(){
-		System.out.println(saMap.getTaille().y);
+		//System.out.println(cam.getPickRay(0, 0));
 		if (sonPerso.getCenter().x > borderMin.x){ // Actualisation de la caméra en x
 			cam.position.set(sonPerso.getCenter().x,cam.position.y,0); // On centre la caméra sur le perso en x, uniquement en x si il est suffisement loin du bord de la map
 			cam.update();

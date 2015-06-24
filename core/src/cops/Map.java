@@ -110,12 +110,12 @@ public class Map {
 		posWin.y=fichier.nextInt();
 		tailleWin=fichier.nextInt();
 		nbEnnemies=fichier.nextInt();
-		//Boucle créant les ennemies sur des positions aléatoires de porte
+		//Boucle crï¿½ant les ennemies sur des positions alï¿½atoires de porte
 		for(int i=0;i<nbEnnemies;i++){
-			//On fait un aléatoire pour savoir sur quelle porte va apparaître l'ennemie
-			int random=(int)(Math.random()*(nbPortes));
-			System.out.println(random);
-			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x+1,(int)portes.get(random).getLocalisation().y+1));
+			//On fait un alï¿½atoire pour savoir sur quelle porte va apparaï¿½tre l'ennemie
+			int random;
+			random=(int)Math.random()*(nbPortes-1);
+			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y));
 		}
 	}
 	public void draw(SpriteBatch batch){
@@ -156,6 +156,9 @@ public class Map {
 			}
 		}
 		
+	}
+	public int getNbObjectifs() {
+		return nbObjectifs;
 	}
 	//Collision entre la map et le personnage
 	public void collision(Personnage perso){
@@ -205,7 +208,7 @@ public class Map {
 	public void gravity(Personnage perso){
 		perso.gravity(tiles);
 	}
-	//Procédure faisant bouger les ennemies
+	//Procï¿½dure faisant bouger les ennemies
 	public void ennemiesMouvement(){
 		//Parcour de la liste d'ennemies
 		for(int i=0;i<ennemies.size();i++){

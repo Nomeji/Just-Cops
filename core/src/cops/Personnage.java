@@ -226,4 +226,7 @@ public class Personnage {
 	public int getAscenseur(){
 		return(ascenseur);
 	}
+	public int getVie() {
+		return vie;
+	}
 }
