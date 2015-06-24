@@ -24,6 +24,8 @@ public class JustCops extends ApplicationAdapter {
 	//private AnimPerso perso;
 	private Map map;
 	private Camera cam;
+	//Compteur de map
+	private int cptMap=1;
 	
 	@Override
 	public void create () {
@@ -44,26 +46,35 @@ public class JustCops extends ApplicationAdapter {
 	}
 	@Override
 	public void render () {
-		//La fenetre
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		//Mise ï¿½ jour des evenements
-		perso.updateEvenement();
-		//Deplacement et action
-		perso.update();
-		// Camera
-		cam.update();
-		batch.setProjectionMatrix(cam.getCamera().combined);
-		//Gestion de la collision avec la map
-		map.collision(perso);
-		//Deplacement du personnage
-		perso.deplacement();
-		//Les ascenseur bouge
-		map.monter(perso);
-		//Affichage
-		batch.begin();
-		map.draw(batch);
-		perso.draw(batch);
-		batch.end();
+			//La fenetre
+			Gdx.gl.glClearColor(1, 0, 0, 1);
+			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+			//Mise ï¿½ jour des evenements
+			perso.updateEvenement();
+			//Deplacement et action
+			perso.update();
+			// Camera
+			cam.update();
+			batch.setProjectionMatrix(cam.getCamera().combined);
+			//Gravité
+			map.gravity(perso);
+			//Gestion de la collision avec la map
+			map.collision(perso);
+			//Deplacement du personnage
+			perso.deplacement();
+			//Les ascenseur bouge
+			map.monter(perso);
+			//Les portes sont utilisées
+			map.usePorte(perso);
+			//Affichage
+			batch.begin();
+			map.draw(batch);
+			perso.draw(batch);
+			batch.end();
+			//Vérification si c'est gagné et possibilité de roulement de map
+			if(map.win(perso)){
+				cptMap++;
+				batch.dispose();
+			}
 	}
 }

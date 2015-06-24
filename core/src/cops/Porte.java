@@ -10,6 +10,8 @@ public class Porte {
 	Vector2 localisation;
 	Vector2 taille;
 	Texture texture;
+	//Booléen quand utilisé
+	boolean utiliser=false;
 	//Constructeur
 	public Porte(Vector2 localisation){
 		//Entré de la localisation
@@ -24,5 +26,16 @@ public class Porte {
 	//Affichage
 	public void draw(SpriteBatch batch){
 		batch.draw(texture, localisation.x,localisation.y);
+	}
+	//Getteur de position
+	public Vector2 getLocalisation(){
+		return(localisation);
+	}
+	//Getteur de taille
+	public Vector2 getTaille(){
+		return(taille);
+	}
+	public int use(Personnage perso){
+		return(2);
 	}
 }
