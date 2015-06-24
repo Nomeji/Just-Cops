@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
@@ -36,7 +37,7 @@ public class JustCops extends ApplicationAdapter {
 		//Creation des personnages
 		if(Personnage.nbJoueurs<=JOUEURMAX){
 			perso=new Personnage(new Vector2(19,HAUTEUR-132));
-			//perso=new AnimPerso(new Vector2(19,HAUTEUR-132));
+			//perso=new Personnage(new Vector2(0,0));
 		}
 		try {
 			map=new Map("level1.txt");
@@ -93,12 +94,17 @@ public class JustCops extends ApplicationAdapter {
 			//V�rification si c'est gagn� et possibilit� de roulement de map
 			if(map.win(perso)){
 				cptMap++;
+				cam.disable();
+				batch.setProjectionMatrix(new Matrix4());
 				try {
 					map=new Map("level2.txt");
 				} catch (FileNotFoundException e) {
 					System.out.println("Erreur, la map n'existe pas");
 				}
-				perso.setLocalisation(279,0);
+				//perso.setLocalisation(500,-470);
+				perso.setLocalisation(147,903);
+				cam.enable();
+				batch.setProjectionMatrix(cam.getCamera().combined);
 			}
 	}
 }
