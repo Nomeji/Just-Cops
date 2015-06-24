@@ -39,7 +39,7 @@ public class JustCops extends ApplicationAdapter {
 			//perso=new AnimPerso(new Vector2(19,HAUTEUR-132));
 		}
 		try {
-			map=new Map("level1.txt");
+			map=new Map("level2.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur, la map n'existe pas");
 		}

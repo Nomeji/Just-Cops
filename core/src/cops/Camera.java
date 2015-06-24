@@ -13,7 +13,7 @@ public class Camera {
 	Camera(Personnage perso, Map m){ // On centre la caméra sur un personnage saisi en argument.
 		sonPerso = perso;
 		saMap = m;
-		borderMin = new Vector2(80f,420f);
+		borderMin = new Vector2(0f,0f);
 		// On défini le champ de la caméra
 		cam = new OrthographicCamera(200,200);
 		cam.position.set(borderMin, 0);
