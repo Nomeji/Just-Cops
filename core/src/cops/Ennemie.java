@@ -38,7 +38,7 @@ public class Ennemie {
 			//On parcours la totalité des tiles
 			for(int i=0;i<tiles.size();i++){
 				//On vérifie celui qui est situé après lui
-				if((localisation.x+taille.x+3>tiles.get(i).getLocalisation().x)&&(localisation.x+taille.x<=tiles.get(i).getLocalisation().x)){
+				if((localisation.x+taille.x+3>tiles.get(i).getLocalisation().x)&&(localisation.x+taille.x<=tiles.get(i).getLocalisation().x)&&(localisation.y==tiles.get(i).getLocalisation().y)){
 					//Si il est passable alors le mouvement est incrémenté
 					if(tiles.get(i).getNum()!=1){
 						localisation.x++;
@@ -55,7 +55,7 @@ public class Ennemie {
 			//On parcourt la totalité des tiles
 			for(int i=0;i<tiles.size();i++){
 				//On vérifie que ce qu'il y a dérière n'est pas un bloc plein
-				if((localisation.x>=tiles.get(i).getLocalisation().x)&&(localisation.x-3<tiles.get(i).getLocalisation().x)){
+				if((localisation.x>=tiles.get(i).getLocalisation().x)&&(localisation.x-3<tiles.get(i).getLocalisation().x)&&(localisation.y==tiles.get(i).getLocalisation().y)){
 					if(tiles.get(i).getNum()!=1){
 						localisation.x--;
 					}
