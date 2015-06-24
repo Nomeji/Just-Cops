@@ -214,4 +214,18 @@ public class Map {
 			ennemies.get(i).mouvement(tiles);
 		}
 	}
+	//Gestion des contacts entre les ennemies et le joueur
+	public void contactEnnemie(Personnage perso){
+		//Parcours de la totalité des ennemies
+		for(int i=0 ;i<ennemies.size();i++){
+			//Verification du contact droit
+			if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x+perso.getTaille().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
+				perso.setVie(perso.getVie()-1);
+			}
+			//Verification du contact gauche
+			else if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
+				perso.setVie(perso.getVie()-1);
+			}
+		}
+	}
 }

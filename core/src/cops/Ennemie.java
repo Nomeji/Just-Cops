@@ -54,7 +54,7 @@ public class Ennemie {
 		else{
 			//On parcourt la totalité des tiles
 			for(int i=0;i<tiles.size();i++){
-				//On vérifie que ce qu'il y a dérière n'est pas un bloc plein
+				//On vérifie que ce qu'il y a derière n'est pas un bloc plein
 				if((localisation.x>=tiles.get(i).getLocalisation().x)&&(localisation.x-3<tiles.get(i).getLocalisation().x)&&(localisation.y==tiles.get(i).getLocalisation().y)){
 					if(tiles.get(i).getNum()!=1){
 						localisation.x--;
@@ -66,5 +66,13 @@ public class Ennemie {
 				}
 			}
 		}
+	}
+	//Getteur de Localisation
+	public Vector2 getLocalisation(){
+		return(localisation);
+	}
+	//Getteur de taille
+	public Vector2 getTaille(){
+		return(taille);
 	}
 }

@@ -72,6 +72,8 @@ public class JustCops extends ApplicationAdapter {
 			map.monter(perso);
 			//Mouvement des ennemies
 			map.ennemiesMouvement();
+			//Contact entre les ennemies et le joueurs
+			map.contactEnnemie(perso);
 			//Les portes sont utilis�es
 			map.usePorte(perso);
 			// Mise à jour du nb porte
