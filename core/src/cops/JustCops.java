@@ -70,6 +70,8 @@ public class JustCops extends ApplicationAdapter {
 			perso.deplacement();
 			//Les ascenseur bouge
 			map.monter(perso);
+			//Mouvement des ennemies
+			map.ennemiesMouvement();
 			//Les portes sont utilis�es
 			map.usePorte(perso);
 			// Mise à jour du nb porte

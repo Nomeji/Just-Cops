@@ -208,4 +208,11 @@ public class Map {
 	public void gravity(Personnage perso){
 		perso.gravity(tiles);
 	}
+	//Proc�dure faisant bouger les ennemies
+	public void ennemiesMouvement(){
+		//Parcour de la liste d'ennemies
+		for(int i=0;i<ennemies.size();i++){
+			ennemies.get(i).mouvement(tiles);
+		}
+	}
 }
