@@ -39,7 +39,7 @@ public class JustCops extends ApplicationAdapter {
 			//perso=new AnimPerso(new Vector2(19,HAUTEUR-132));
 		}
 		try {
-			map=new Map("level2.txt");
+			map=new Map("level1.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur, la map n'existe pas");
 		}
@@ -93,7 +93,12 @@ public class JustCops extends ApplicationAdapter {
 			//V�rification si c'est gagn� et possibilit� de roulement de map
 			if(map.win(perso)){
 				cptMap++;
-				batch.dispose();
+				try {
+					map=new Map("level2.txt");
+				} catch (FileNotFoundException e) {
+					System.out.println("Erreur, la map n'existe pas");
+				}
+				perso.setLocalisation(279,0);
 			}
 	}
 }

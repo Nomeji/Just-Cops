@@ -234,4 +234,8 @@ public class Personnage {
 	public void setVie(int v){
 		vie=v;
 	}
+	//Setteur de localisation
+	public void setLocalisation(int posX,int posY){
+		localisation=new Vector2(posX,posY);
+	}
 }
