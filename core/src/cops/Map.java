@@ -113,9 +113,8 @@ public class Map {
 		//Boucle cr�ant les ennemies sur des positions al�atoires de porte
 		for(int i=0;i<nbEnnemies;i++){
 			//On fait un al�atoire pour savoir sur quelle porte va appara�tre l'ennemie
-			int random;
-			random=(int)Math.random()*(nbPortes-1);
-			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y));
+			int random=(int)(Math.random()*(nbPortes-1));
+			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y+1));
 		}
 	}
 	public void draw(SpriteBatch batch){
