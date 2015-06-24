@@ -226,7 +226,12 @@ public class Personnage {
 	public int getAscenseur(){
 		return(ascenseur);
 	}
+	//Getteur de vie
 	public int getVie() {
 		return vie;
+	}
+	//Setteur de vie
+	public void setVie(int v){
+		vie=v;
 	}
 }

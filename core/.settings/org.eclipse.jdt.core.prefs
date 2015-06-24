@@ -1,5 +1,9 @@
 #
+<<<<<<< HEAD
+#Wed Jun 24 09:47:22 CEST 2015
+=======
 #Wed Jun 24 14:11:47 CEST 2015
+>>>>>>> 42b468635d9e2265509d16fe8ff88d3989438100
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.compliance=1.6
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve

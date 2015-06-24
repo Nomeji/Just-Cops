@@ -113,9 +113,8 @@ public class Map {
 		//Boucle crï¿½ant les ennemies sur des positions alï¿½atoires de porte
 		for(int i=0;i<nbEnnemies;i++){
 			//On fait un alï¿½atoire pour savoir sur quelle porte va apparaï¿½tre l'ennemie
-			int random;
-			random=(int)Math.random()*(nbPortes-1);
-			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y));
+			int random=(int)(Math.random()*(nbPortes-1));
+			ennemies.add(new Ennemie((int)portes.get(random).getLocalisation().x,(int)portes.get(random).getLocalisation().y+1));
 		}
 	}
 	public void draw(SpriteBatch batch){
@@ -213,6 +212,20 @@ public class Map {
 		//Parcour de la liste d'ennemies
 		for(int i=0;i<ennemies.size();i++){
 			ennemies.get(i).mouvement(tiles);
+		}
+	}
+	//Gestion des contacts entre les ennemies et le joueur
+	public void contactEnnemie(Personnage perso){
+		//Parcours de la totalité des ennemies
+		for(int i=0 ;i<ennemies.size();i++){
+			//Verification du contact droit
+			if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x+perso.getTaille().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
+				perso.setVie(perso.getVie()-1);
+			}
+			//Verification du contact gauche
+			else if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
+				perso.setVie(perso.getVie()-1);
+			}
 		}
 	}
 }

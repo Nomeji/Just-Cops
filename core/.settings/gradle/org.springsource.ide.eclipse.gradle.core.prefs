@@ -1,4 +1,8 @@
 #org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+<<<<<<< HEAD
+#Wed Jun 24 09:47:28 CEST 2015
+=======
 #Fri Apr 10 10:35:12 CEST 2015
+>>>>>>> 42b468635d9e2265509d16fe8ff88d3989438100
 org.springsource.ide.eclipse.gradle.linkedresources=
 org.springsource.ide.eclipse.gradle.rootprojectloc=..

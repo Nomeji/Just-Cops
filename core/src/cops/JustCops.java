@@ -39,7 +39,7 @@ public class JustCops extends ApplicationAdapter {
 			//perso=new AnimPerso(new Vector2(19,HAUTEUR-132));
 		}
 		try {
-			map=new Map("level1.txt");
+			map=new Map("level2.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur, la map n'existe pas");
 		}
@@ -72,6 +72,8 @@ public class JustCops extends ApplicationAdapter {
 			map.monter(perso);
 			//Mouvement des ennemies
 			map.ennemiesMouvement();
+			//Contact entre les ennemies et le joueurs
+			map.contactEnnemie(perso);
 			//Les portes sont utilis�es
 			map.usePorte(perso);
 			// Mise à jour du nb porte
