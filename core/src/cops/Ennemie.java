@@ -1,6 +1,7 @@
 package cops;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 public class Ennemie {
@@ -19,5 +20,9 @@ public class Ennemie {
 		ennemie=new Texture("BanditNoMoveRight.png");
 		taille.x=ennemie.getWidth();
 		taille.y=ennemie.getHeight();
+	}
+	//Affichage des Ennemies
+	public void draw(SpriteBatch batch){
+		batch.draw(ennemie, localisation.x,localisation.y);
 	}
 }

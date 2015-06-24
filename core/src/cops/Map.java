@@ -131,6 +131,10 @@ public class Map {
 		for(int i=0;i<portes.size();i++){
 			portes.get(i).draw(batch);
 		}
+		//Boucle pour lire les ennemies
+		for(int i=0;i<ennemies.size();i++){
+			ennemies.get(i).draw(batch);
+		}
 	}
 	public void monter(Personnage perso){
 		for(int i=0;i<ascenseurs.size();i++){
