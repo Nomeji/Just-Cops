@@ -216,13 +216,16 @@ public class Map {
 	public void contactEnnemie(Personnage perso){
 		//Parcours de la totalité des ennemies
 		for(int i=0 ;i<ennemies.size();i++){
-			//Verification du contact droit
-			if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x+perso.getTaille().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
-				perso.setVie(perso.getVie()-1);
-			}
-			//Verification du contact gauche
-			else if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
-				perso.setVie(perso.getVie()-1);
+			//Si le personnage a encore des vies
+			if(perso.getVie()!=0){
+				//Verification du contact droit
+				if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x+perso.getTaille().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
+					perso.setVie(perso.getVie()-1);
+				}
+				//Verification du contact gauche
+				else if((perso.getLocalisation().x<=ennemies.get(i).getLocalisation().x+ennemies.get(i).getTaille().x) && (perso.getLocalisation().x>=ennemies.get(i).getLocalisation().x) && (perso.getLocalisation().y==ennemies.get(i).getLocalisation().y)){
+					perso.setVie(perso.getVie()-1);
+				}
 			}
 		}
 	}

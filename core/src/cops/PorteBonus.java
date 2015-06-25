@@ -18,6 +18,8 @@ public class PorteBonus extends Porte{
 			//Quand une porte est utilisé elle redevient une porte normale
 			super.texture=new Texture("porte.png");
 			utiliser=true;
+			//Le personnage regagne une vie
+			perso.setVie(perso.getVie()+1);
 			return(1);
 		}
 		return(-1);
