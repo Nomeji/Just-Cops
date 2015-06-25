@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Ascenseur {
 	//Taille d'un étage
-	final static int TAILLETAGE=34;
+	private int tailleEtage;
 	//Attribut
 	private Vector2 localisation;
 	private Vector2 taille;
@@ -18,7 +18,7 @@ public class Ascenseur {
 	//Booleen pour monter ou descendre
 	private boolean monte=true;
 	//Constructeur
-	Ascenseur(Vector2 localisation,int nbEtages){
+	Ascenseur(Vector2 localisation,int nbEtages,int tailleEtage){
 		this.localisation=new Vector2();
 		this.localisation=localisation;
 		texture=new Texture("../core/assets/ascenseur.png");
@@ -26,15 +26,16 @@ public class Ascenseur {
 		taille.x=texture.getHeight();
 		taille.y=texture.getWidth();
 		this.nbEtages=nbEtages;
+		this.tailleEtage=tailleEtage;
 	}
 	//L'ascenseur monte et le personnage aussi si il est dans un ascenseur
 	public void monter(Personnage perso, int numAscenseur){
 		//L'ascenseur monte
-		if(cptEtages<=nbEtages*TAILLETAGE+1){
+		if(cptEtages<=nbEtages*tailleEtage+1){
 			if(monte){
 				localisation.y++;
 				cptEtages++;
-				if(cptEtages==nbEtages*TAILLETAGE){
+				if(cptEtages==nbEtages*tailleEtage){
 					monte=false;
 				}
 			}

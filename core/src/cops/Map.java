@@ -16,7 +16,6 @@ public class Map {
 	public static final int HAUTEUR=480;
 	final static int TTILE=3;
 	//Attribut
-	private String nomLevel;
 	//Taille de la map en abscisse et en ordonn�
 	private Vector2 taille;
 	//Rendu de la map
@@ -25,21 +24,19 @@ public class Map {
 	private ArrayList<Tile> tiles;
 	//Liste d'ascenseur
 	private ArrayList<Ascenseur> ascenseurs;
+	private int tailleEtage;
 	private int nbAscenseur;
 	//Liste des portes et gestion des objectifs
 	private ArrayList<Porte> portes;
 	private int nbPortes;
 	private int nbObjectifs;
 	private int nbBonus;
-	//Tile pouvant �tre traverser
-	private int numTile;
 	//Emplacement de victoire
 	private Vector2 posWin;
 	private int tailleWin;
 	//Gestions des ennemies
 	private int nbEnnemies;
 	private ArrayList<Ennemie> ennemies;
-	
 	
 	Map(String nomLevel) throws FileNotFoundException{
 		taille=new Vector2();
@@ -72,6 +69,7 @@ public class Map {
 		}
 		//Va prendre la valeur du nombre d'ascenseur
 		nbAscenseur=fichier.nextInt();
+		tailleEtage=fichier.nextInt();
 		int abscisseA;
 		int ordonneA;
 		int nbEtagesA;
@@ -80,7 +78,7 @@ public class Map {
 			abscisseA=fichier.nextInt();
 			ordonneA=fichier.nextInt();
 			nbEtagesA=fichier.nextInt();
-			ascenseurs.add(new Ascenseur(new Vector2(abscisseA,ordonneA),nbEtagesA));
+			ascenseurs.add(new Ascenseur(new Vector2(abscisseA,ordonneA),nbEtagesA,tailleEtage));
 		}
 		//gestion des porte;
 		nbPortes=fichier.nextInt();

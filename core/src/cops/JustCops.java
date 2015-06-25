@@ -24,6 +24,7 @@ public class JustCops extends ApplicationAdapter {
 	private Personnage perso;
 	//private AnimPerso perso;
 	private Map map;
+	private Map map2;
 	private Camera cam;
 	//Compteur de map
 	private int cptMap=1;
@@ -41,6 +42,7 @@ public class JustCops extends ApplicationAdapter {
 		}
 		try {
 			map=new Map("level1.txt");
+			map2=new Map("level2.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur, la map n'existe pas");
 		}
@@ -96,14 +98,10 @@ public class JustCops extends ApplicationAdapter {
 				cptMap++;
 				cam.disable();
 				batch.setProjectionMatrix(new Matrix4());
-				try {
-					map=new Map("level2.txt");
-				} catch (FileNotFoundException e) {
-					System.out.println("Erreur, la map n'existe pas");
-				}
-				//perso.setLocalisation(500,-470);
-				perso.setLocalisation(147,903);
-				cam.enable();
+				perso.setLocalisation(500,-470);
+				//perso.setLocalisation(147,903);
+				cam= new Camera(perso,map);
+				map=map2;
 				batch.setProjectionMatrix(cam.getCamera().combined);
 			}
 	}
